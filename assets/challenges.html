@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <title>Challenges</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <header class="main-header clearfix">
+        <h1>&#128293; Challenges</h1>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <hr />
+
+    <article>
+        <header>
+            <h2>Cara Kerja Proses Kompilasi dalam Bahasa Pemrograman</h2>
+            <p>
+                02 September 2023 | <mark>6 menit</mark><br>
+                <img src="assets/saya.jpg" alt="Benhard Yudha" width="50" height="50"><strong>Oleh Benhard Yudha (11S21003)</strong>
+            </p>
+        </header>
+
+        <hr>
+        <p>
+            Bahasa pemrograman dapat diimplementasikan dengan salah satu dari tiga metode yang dikenal
+             secara umum, yaitu <em><strong>compile</strong></em> (kompilasi), <a href="https://beritati.blogspot.com/2019/12/cara-kerja-proses-interpretasi-dalam.html"><em><strong>interpret</strong></em></a>, dan <em><strong>hybrid</strong></em>. Salah satu teknik (yang ekstrim), 
+             adalah bahwa program/kode dapat diterjemahkan ke dalam bahasa mesin, yang kemudian dapat 
+             dieksekusi langsung di komputer. Metode ini disebut dengan implementasi <em><strong><em>compiler</em></strong></em> dan memiliki 
+             keuntungan bahwa eksekusi program tersebut sangat cepat, setelah proses penerjemahan selesai. 
+             Sebagian besar implementasi bahasa, seperti <em>C</em>, <em>COBOL</em>, <em>C</em> ++, dan <em>Ada</em>, dilakukan oleh <em>compiler</em>.
+        </p>
+
+        <p>
+            Bahasa pemrograman yang diterjemahkan oleh <em>compiler</em> disebut sebagai bahasa sumber (<em>source language / 
+            source code</em>). Proses kompilasi dan eksekusi program berlangsung dalam beberapa fase, 
+            yang paling penting ditunjukkan pada gambar di bawah ini.
+        </p>
+
+        <figure>
+            <img src="assets/proses kompilasi.png" alt="proses kompilasi">
+            <figcaption>Proses Kompilasi</figcaption>
+        </figure>
+
+        <p>
+            Suatu piranti yang disebut dengan <em><strong>lexical analyzer</strong></em> (berfungsi untuk analisa leksikal) akan 
+            mengumpulkan karakter-karakter dari program sumber ke dalam unit-unit leksikal. Unit-unit leksikal 
+            dari suatu program adalah <em><strong>identifiers, special words (keywords & reserved words), operator,</strong></em> dan 
+            berbagai simbol tanda baca. Lexical analyzer akan mengabaikan komentar dalam program sumber 
+            karena <em>compiler</em> tidak menggunakannya.
+        </p>
+
+        <p>
+            Suatu piranti lain yang disebut <em><strong>syntax analyzer</strong></em> (berfungsi untuk menganalisa sintaks) akan 
+            mengambil unit-unit leksikal dari lexical analyzer dan menggunakannya untuk membangun struktur 
+            hierarki yang disebut dengan <a href="https://beritati.blogspot.com/2019/06/pengertian-parse-tree-dalam-derivasi.html"><em>parse trees</em></a> (struktur seperti pohon). <a href="https://beritati.blogspot.com/2019/06/pengertian-parse-tree-dalam-derivasi.html"><em>parse trees</em></a> ini mewakili struktur 
+            sintaksis program. Dalam banyak kasus, tidak benar-benar ada struktur parse trees yang dibangun; 
+            melainkan, menghasilkan informasi yang diperlukan untuk membuat suatu <em>tree</em> (struktur pohon) dan 
+            untuk digunakan secara langsung.
+        </p>
+
+        <p>
+            <em><strong>Intermediate code generator</strong></em> (suatu piranti untuk membuat kode perantara) menghasilkan program
+            dalam bahasa yang berbeda, pada tingkat perantara yang menjadi perantara program sumber dan
+            hasil akhir dari <em>compiler</em>: yaitu program bahasa mesin. Bahasa perantara tersebut terkadang sangat
+            mirip dengan bahasa <em><strong>assembly</strong></em>, dan terkadang memang bahasa <em>assembly</em>. Dalam kasus lain, kode
+            perantara berada pada level yang agak lebih tinggi daripada bahasa <em>assembly</em>. Piranti lain yang
+            disebut <em><strong>semantic analyzer</strong></em> (untuk menganalisa semantik) adalah bagian integral dari <em>intermediate
+            code generator</em>. <em>Semantic analyzer</em> memeriksa errors (kesalahan), seperti kesalahan tipe data, yang
+            sulit, untuk dideteksi selama analisa sintaks.
+        </p>
+
+        <p>
+            Optimasi, yang berfungsi untuk meningkatkan program (biasanya dalam bentuk versi kode perantara) 
+            dengan cara membuatnya lebih kecil atau lebih cepat atau keduanya sekaligus, seringkali merupakan 
+            bagian opsional dari teknik kompilasi. Bahkan, beberapa <em>compiler</em> tidak mampu melakukan optimasi 
+            yang signifikan. Jenis <em>compiler</em> ini akan digunakan dalam situasi di mana kecepatan eksekusi program 
+            yang diterjemahkan jauh lebih penting daripada kecepatan kompilasi. Contoh dari situasi seperti ini 
+            adalah laboratorium komputasi untuk para <em>programmer</em> pemula. Dalam kebanyakan dunia komersial 
+            dan industri, kecepatan eksekusi lebih penting daripada kecepatan kompilasi, sehingga optimasi 
+            adalah sesuatu yang diinginkan secara rutin. Karena banyak jenis optimasi sulit dilakukan pada bahasa 
+            mesin, kebanyakan optimasi dilakukan pada kode perantara.
+        </p>
+
+        <p>
+            Piranti yang disebut <em><strong>code generator</strong></em> berfungsi untuk menerjemahkan versi kode perantara yang sudah 
+            dioptimasi dari suatu program ke dalam program bahasa mesin.
+        </p>
+
+        <p>
+            Suat tabel simbol akan berfungsi sebagai basis data untuk proses kompilasi. Konten utama dari tabel 
+            simbol adalah informasi jenis dan atribut dari setiap nama yang ditentukan pengguna dalam program. 
+            Informasi ini ditempatkan di tabel simbol oleh <em>lexical analyzer</em> dan <em>syntax analyzer</em> dan digunakan 
+            oleh <em>semantic analyzer</em> dan <em>code generator</em>.
+        </p>
+
+        <p>
+            Seperti yang dinyatakan sebelumnya, meskipun bahasa mesin yang dihasilkan oleh <em>compiler</em> dapat 
+            dieksekusi langsung pada perangkat keras, hal ini hampir selalu harus dijalankan bersama dengan 
+            beberapa kode lainnya. Sebagian besar program tersebut juga memerlukan program-program dari 
+            sistem operasi. Yang paling umum misalnya adalah program untuk <em><strong>input</strong></em> dan <em><strong>output</strong></em>. <em>compiler</em> 
+            membuat suatu panggilan ke program sistem (operasi) saat dibutuhkan oleh program yang dibuat 
+            <em>programmer</em>. Sebelum program bahasa mesin yang dihasilkan oleh <em>compiler</em> bisa dieksekusi, program-
+            program yang diperlukan dari sistem operasi harus ditemukan dan ditautkan ke program yang dibuat 
+            <em>programmer</em>. Operasi penautan ini menghubungkan program yang dibuat <em>programmer</em> ke program-
+            program sistem dengan menempatkan berbagai alamat titik masuk dari program sistem supaya bisa 
+            dipanggil ke dalam program yang dibuat <em>programmer</em>. Kode yang dibuat <em>programmer</em> dan sistem 
+            tersebut secara bersama-sama kadang-kadang disebut dengan <em><strong>load module</strong></em>, atau <em><strong>executable image</strong></em>. 
+            Proses mengumpulkan program-program sistem dan menghubungkannya dengan program yang dibuat 
+            <em>programmer</em> disebut dengan <em><strong>linking</strong></em> dan <em><strong>loading</strong></em>, atau kadang-kadang hanya <em>linking</em>. Proses ini 
+            dilakukan oleh program sistem yang disebut <em><strong>linker</strong></em>.
+        </p>
+
+        <p>
+            Selain program sistem, program dari <em>programmer</em> harus sering dikaitkan dengan program lain (yang 
+            dibuatt oleh <em>programmer</em> juga) yang sudah dikompilasi sebelumnya yang berada di <em><strong>library</strong></em>. Jadi <em>linker</em> 
+            tidak hanya menghubungkan program yang diberikan ke program sistem, tetapi juga 
+            menghubungkannya dengan program pengguna yang lain.
+        </p>
+
+        <p>
+            Kecepatan koneksi antara memori komputer dan prosesornya biasanya menentukan kecepatan 
+            komputer, karena instruksi seringkali dapat dieksekusi lebih cepat didandingkan dengan ketika 
+            instruksi dapat dipindahkan ke prosesor untuk dieksekusi. Koneksi ini disebut <em><strong>bottleneck von 
+            Neumann</strong></em>; hal ini adalah faktor kelemahan dalam aspek kecepatan komputer arsitektur <em>von Neumann</em>. 
+            <em>Bottleneck von Neumann</em> telah menjadi salah satu motivasi utama untuk penelitian dan 
+            pengembangan komputer paralel.
+        </p>
+    </article>
+
+    <fieldset>
+            Refrensi: <a href="">Blogspot BeritaAti</a>
+    </fieldset>
+    <hr>
+    <footer>
+        <p>
+            Copyright &copy; 2024 oleh Praktikum PABWE
+        </p>
+    </footer>
+</body>
+</html> 
